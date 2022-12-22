@@ -20,8 +20,8 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <p v-for="message in chatList">{{ message.text }}</p>
+                    <div class="col-12 d-flex flex-column message-container"> 
+                        <p v-for="message in chatList" class="message" :class="(message.status === 'send' ? 'send' : 'receive')">{{ message.text }}</p>
                     </div>
                 </div>
             </div>
