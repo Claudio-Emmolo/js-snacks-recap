@@ -21,10 +21,19 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Snak Pari Dispari</h1>
-                    <button @click="">Genera Numero</button>
+                    <button @click="generateRandomNumber()">Genera Numero</button>
                 </div>
-                <div class="col-12">
-                    
+                <div class="col-6">
+                    <h2>Numeri Pari</h2>
+                    <ul class="number-pari">
+                        <li v-for="number,index in numberPari"> {{ number }} </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <h2>Numeri Dispari</h2>
+                    <ul class="number-dispari">
+                        <li v-for="number,index in numberDispari"> {{ number }} </li>
+                    </ul>
                 </div>
             </div>
         </div>

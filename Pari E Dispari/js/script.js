@@ -9,33 +9,28 @@ const {createApp} = Vue;
 createApp({
 	data() {
 		return{
-          emailList : [],
+          numberPari : [],
+          numberDispari : [],
 		}
 	},
 
     methods: {
 
-        generateRandomEmail(){
-            for (let i = 0; i < 10; i++) {
-
-                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        generateRandomNumber(){
+                axios.get('https://flynn.boolean.careers/exercises/api/array/integers?min=1&max=100&items=1')
                  .then((response) => {
-                    const result = response.data.response;
+                    const result = response.data.response[0];
                     console.log(result);
-                    this.emailList.push(result);
-
-
+                    if (result % 2 == 0){
+                        this.numberPari.push(result);
+                    } else {
+                        this.numberDispari.push(result);
+                    }
                  });
                 
             }
 
         },
-
-    },
-    
-    created(){
-        this.generateRandomEmail();
-    }
 
 
 }).mount ('#app')
