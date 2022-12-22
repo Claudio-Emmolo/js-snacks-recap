@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Js Snack Array DI numeri</title>
+    <title>Js Snack Generatore Somma</title>
 
 
     <!-- Bootstrap V 5.2 -->
@@ -19,14 +19,20 @@
     <div id="app">
             <div class="container">
                 <div class="row">
+                    <div class="col-12 text-center">
+                        <h1>Generatore Somma</h1>
+                    </div>
                     <div class="col-12 my-5 text-center">
                         <label for="user-number">Quanti numeri vuoi inserire?</label>
                         <input type="number" id="user-number" class="m-auto my-3 d-block" v-model="userNumber" @keyup.enter="getUserNumber()">
                         <a href="#" class="btn btn-success" @click="getUserNumber()">Send</a>
                     </div>
 
-                    <div class="col-12">
-                        <span class="m-5" v-for="number,index in numberList"> {{ number }} </span>
+                    <div class="col-12 d-flex align-items-center flex-column">
+                        <h2>Il risultato è:</h2>
+                        <div class="box-number d-flex">
+                            <span class="m-auto"> {{ result }} </span>
+                        </div>
                     </div>
                 </div>
             </div>

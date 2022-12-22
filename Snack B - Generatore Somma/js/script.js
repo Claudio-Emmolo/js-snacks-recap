@@ -10,6 +10,7 @@ createApp({
 		return{
             numberList : null,
             userNumber : null,
+            result : null,
 		}
 	},
 
@@ -20,7 +21,13 @@ createApp({
             .then((response) => {
                 this.numberList = response.data.response;
                 this.userNumber = null
+
+                this.numberList.forEach(num => {
+                    this.result += num;
+                });
+                
             });
+
         }
     }
 
