@@ -9,8 +9,8 @@ const {createApp} = Vue;
 createApp({
 	data() {
 		return{
-          numberPari : [],
-          numberDispari : [],
+          numbersPari : [],
+          numbersDispari : [],
 		}
 	},
 
@@ -20,12 +20,7 @@ createApp({
                 axios.get('https://flynn.boolean.careers/exercises/api/array/integers?min=1&max=100&items=1')
                  .then((response) => {
                     const result = response.data.response[0];
-                    console.log(result);
-                    if (result % 2 == 0){
-                        this.numberPari.push(result);
-                    } else {
-                        this.numberDispari.push(result);
-                    }
+                    (result % 2 == 0) ? this.numbersPari.push(result) : this.numbersDispari.push(result)
                  });
                 
             }

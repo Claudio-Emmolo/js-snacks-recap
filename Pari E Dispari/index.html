@@ -19,20 +19,20 @@
     <div id="app">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 pb-5">
                     <h1>Snak Pari Dispari</h1>
                     <button @click="generateRandomNumber()">Genera Numero</button>
                 </div>
                 <div class="col-6">
                     <h2>Numeri Pari</h2>
                     <ul class="number-pari">
-                        <li v-for="number,index in numberPari"> {{ number }} </li>
+                        <li v-for="number,index in numbersPari"> {{ number }} </li>
                     </ul>
                 </div>
                 <div class="col-6">
                     <h2>Numeri Dispari</h2>
                     <ul class="number-dispari">
-                        <li v-for="number,index in numberDispari"> {{ number }} </li>
+                        <li v-for="number,index in numbersDispari"> {{ number }} </li>
                     </ul>
                 </div>
             </div>
