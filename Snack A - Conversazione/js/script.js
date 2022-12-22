@@ -19,10 +19,26 @@ createApp({
             const message = {
                 text : this.userMessage,
                 status : 'send'
-            }
+            };
 
-            this.chatList.push(message)
+            this.chatList.push(message);
+
+            this.userMessage = ""
+
+            setTimeout(() => {
+                axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
+                .then((response) => {
+                    const randomMessage = {
+                        text: response.data.response,
+                        status : 'receive'
+                    }
+
+                    this.chatList.push(randomMessage);
+
+                });
+            }, 800);
         }
+
        
     },
 
